@@ -3,8 +3,8 @@
 	"version": "0.0.1",
 	"contributors": [
 		"Sebastian Mayr <sebmaster16@gmail.com> (http://s3bmaster.blogspot.co.at)",
-		"MaXwell Falstein <sebmaster16@gmail.com>",
-    "Amila Welihinda <amilajack@gmail.com> (http://amilawelihinda.com)"
+		"MaXwell Falstein <max@maxsaxedesign.co.uk> (http://maxfalstein.co.uk)",
+                "Amila Welihinda <amilajack@gmail.com> (http://amilawelihinda.com)"
 	],
 	"description": "parallel2.js enables easy multi-thread processing in javascript",
 	"main": "index.js",
@@ -14,10 +14,12 @@
 	},
 	"keywords": [
 		"parallel",
+		"parallel.js",
+		"parallel2",
+		"parallel2.js",
 		"spawn",
 		"map",
 		"thread",
-		"parallel2.js",
 		"workers",
 		"webworkers"
 	],
