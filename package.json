@@ -1,32 +1,61 @@
 {
-	"name": "paralleljs",
-	"version": "0.2.1",
-	"author": "Adam Savitzky <adam.savitzky@gmail.com>",
+	"name": "parallel2.js",
+	"version": "0.0.1",
 	"contributors": [
-		"Sebastian Mayr <sebmaster16@gmail.com> (http://s3bmaster.blogspot.co.at/)"
+		"Sebastian Mayr <sebmaster16@gmail.com> (http://s3bmaster.blogspot.co.at)",
+		"MaXwell Falstein <sebmaster16@gmail.com>",
+    "Amila Welihinda <amilajack@gmail.com> (http://amilawelihinda.com)"
 	],
-	"description": "parallel.js enables easy multi-thread processing in javascript",
-	"main": "lib/parallel.js",
+	"description": "parallel2.js enables easy multi-thread processing in javascript",
+	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/adambom/parallel.js.git"
-	},
-	"directories": {
-		"lib": "lib",
-		"test": "test"
+		"url": "https://github.com/MaXwellFalstein/Parallel2.js.git"
 	},
 	"keywords": [
 		"parallel",
 		"spawn",
 		"map",
 		"thread",
-		"parallel.js",
+		"parallel2.js",
 		"workers",
 		"webworkers"
 	],
+  "scripts": {
+    "test": "cross-env NODE_ENV=test mocha --bail --timeout 30000 --inline-diffs --async-only --growl --compilers js:babel-register --recursive --require ./test/setup.js test/*.spec.js",
+    "test-all": "cross-env NODE_ENV=test npm-check --production && npm run lint && npm run test && npm run build",
+    "build": "cross-env NODE_ENV=production babel src --out-dir lib && npm run build-web",
+    "build-web": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.js --progress --profile --colors --display-error-details",
+    "clean": "rm -rf lib",
+    "precommit": "npm run test-all",
+    "lint": "cross-env NODE_ENV=test eslint src test",
+    "version": "npm run build",
+    "debug": "cross-env NODE_ENV=test mocha debug --harmony"
+  },
 	"devDependencies": {
-		"jasmine-node": "x",
-		"q": "x"
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "chai": "^3.5.0",
+    "cross-env": "^1.0.8",
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-immutable": "^1.0.0",
+    "eslint-plugin-import": "^1.10.2",
+    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "eslint-plugin-react": "^5.2.2",
+    "husky": "^0.11.4",
+    "json-loader": "^0.5.4",
+    "mocha": "^2.5.3",
+    "npm-check": "^5.2.2",
+    "webpack": "^1.13.1"
 	},
 	"license": "BSD",
 	"scripts": {
@@ -37,7 +66,7 @@
 	},
 	"testling" : {
 		"scripts": [
-			"lib/parallel.js",
+			"lib/parallel2.js",
 			"test/jasmine/jasmine.js",
 			"test/jasmine/jasmine.tap_reporter.js",
 			"test/specs/*.js",
@@ -53,5 +82,13 @@
 			"ipad/6",
 			"android-browser/latest"
 		]
-	}
+	},
+  "engines": {
+    "node": "4.x || 6.x",
+    "npm": "2.x || 3.x"
+  },
+  "devEngines": {
+    "node": "4.x || 6.x",
+    "npm": "3.x"
+  }
 }

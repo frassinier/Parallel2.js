@@ -2,20 +2,20 @@
 
 ## Parallel Computing with Javascript
 
-> Parallel2.js is the second generation of Parallel.js, based on [Adombom's](https://github.com/adambom) [Parallel.js](https://github.com/adambom/parallel.js).
+> Parallel2.js is the second generation of parallel2.js, based on [Adombom's](https://github.com/adambom) [parallel2.js](https://github.com/MaXwellFalstein/Parallel2.js).
 
 ---
 
-Parallel.js is a simple library for parallel computing in Javascript, either in Node.js or in the Web Browser.
+parallel2.js is a simple library for parallel computing in Javascript, either in Node.js or in the Web Browser.
 Parallel takes advantage of Web Workers for the web, and child processes for Node.
 
 # Installation
 
-You can download the raw javascript file [here](https://raw.github.com/MaXwellFalstein/Parallel2.js/master/lib/parallel.js)
+You can download the raw javascript file [here](https://raw.github.com/MaXwellFalstein/Parallel2.js/master/lib/parallel2.js)
 
 Just include it via a script tag in your HTML page
 
-Parallel.js is also available as a node module:
+parallel2.js is also available as a node module:
 
 ```bash
 npm install parallel2js --save
@@ -35,7 +35,7 @@ operations on the provided data.
 *Arguments*
 * `data`: This is the data you wish to operate on. Will often be an array, but the only restrictions are that your values are serializable as JSON.
 * `options` (optional): Some options for your job
-  * `evalPath` (optional): This is the path to the file eval.js. This is required when running in node, and required for some browsers (IE 10) in order to work around cross-domain restrictions for web workers. Defaults to the same location as parallel.js in node environments, and `null` in the browser.
+  * `evalPath` (optional): This is the path to the file eval.js. This is required when running in node, and required for some browsers (IE 10) in order to work around cross-domain restrictions for web workers. Defaults to the same location as parallel2.js in node environments, and `null` in the browser.
   * `maxWorkers` (optional): The maximum number of permitted worker threads. This will default to 4, or the number of cpus on your computer if you're running node
   * `synchronous` (optional): If webworkers are not available, whether or not to fall back to synchronous processing using `setTimeout`. Defaults to `true`.
 
@@ -171,7 +171,7 @@ object.
 *Example*
 ```javascript
 const p = new Parallel([1, 2, 3], {
- evalPath: 'https://raw.github.com/adambom/parallel.js/master/lib/eval.js'
+ evalPath: 'https://raw.github.com/MaXwellFalstein/Parallel2.js/master/lib/eval.js'
 });
 
 function cubeRoot(n) { return Math.pow(n, 1 / 3); }
@@ -223,9 +223,9 @@ p.map(function (d) {
 
 ## Compatibility
 
-[![browser support](https://ci.testling.com/adambom/parallel.js.png)](https://ci.testling.com/adambom/parallel.js)
+[![browser support](https://ci.testling.com/MaXwellFalstein/Parallel2.js.png)](https://ci.testling.com/MaXwellFalstein/Parallel2.js)
 
-> Currently Parallel.js version one. This will be fixed shortly.
+> Currently parallel2.js version one. This will be fixed shortly.
 
 ---
 

@@ -1,12 +1,14 @@
 {
-  "name": "parallel.js",
-  "version": "0.3.0",
-  "homepage": "https://adambom.github.io/parallel.js/",
-  "authors": [
-    "Adam Savitzky <adam.savitzky@gmail.com>"
-  ],
-  "description": "Parallel.js is a simple library for parallel computing in Javascript, either in Node.js or in the Web Browser. Parallel takes advantage of Web Workers for the web, and child processes for Node.",
+  "name": "parallel2.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MaXwellFalstein/Parallel2.js",
   "license": "BSD",
+  "authors": [
+		"Sebastian Mayr <sebmaster16@gmail.com> (http://s3bmaster.blogspot.co.at)",
+		"MaXwell Falstein <sebmaster16@gmail.com>",
+    "Amila Welihinda <amilajack@gmail.com> (http://amilawelihinda.com)"
+	],
+  "description": "parallel2.js is a simple library for parallel computing in Javascript, either in Node.js or in the Web Browser. Parallel takes advantage of Web Workers for the web, and child processes for Node.",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,5 +16,5 @@
     "test",
     "tests"
   ],
-  "main": "lib/parallel.js"
+  "main": "lib/parallel2.js"
 }
