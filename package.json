@@ -7,6 +7,8 @@
     "Amila Welihinda <amilajack@gmail.com> (http://amilawelihinda.com)"
 	],
 	"description": "parallel2.js enables easy multi-thread processing in javascript",
+  "homepage": "http://github.com/MaXwellFalstein/Parallel2.js",
+  "repository": "git://github.com/MaXwellFalstein/Parallel2.js.git",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
